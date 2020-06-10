@@ -2,88 +2,73 @@
 Docker image with handy machine learning libraries
 
 ## Info
-The image is based on `tensorflow/tensorflow:1.12.0-gpu-py3` and contains
-* CUDA V9.0.176
-* cuDNN 7.2.1
-* Python 3.5.2
+The image is based on `tensorflow/tensorflow:2.2.0-gpu` and contains
+* CUDA V10.1.243
+* cuDNN 7.6.4
+* Python 3.6.9
 
 And the following Python packages:
 
 ```
-absl-py==0.6.1
-astor==0.7.1
-backcall==0.1.0
-bleach==3.0.2
+absl-py==0.9.0
+asn1crypto==0.24.0
+astunparse==1.6.3
+cachetools==4.1.0
+certifi==2020.4.5.1
+chardet==3.0.4
+cryptography==2.1.4
 cycler==0.10.0
-decorator==4.3.0
-defusedxml==0.5.0
-entrypoints==0.2.3
-gast==0.2.0
-grpcio==1.16.0
-h5py==2.8.0
-ipykernel==5.1.0
-ipython==7.1.1
-ipython-genutils==0.2.0
-ipywidgets==7.4.2
-jedi==0.13.1
-Jinja2==2.10
-jsonschema==2.6.0
-jupyter==1.0.0
-jupyter-client==5.2.3
-jupyter-console==6.0.0
-jupyter-core==4.4.0
-Keras-Applications==1.0.6
-Keras-Preprocessing==1.0.5
-kiwisolver==1.0.1
-Markdown==3.0.1
-MarkupSafe==1.1.0
-matplotlib==3.0.1
-mistune==0.8.4
-nbconvert==5.4.0
-nbformat==4.4.0
-notebook==5.7.0
-numpy==1.15.4
-pandas==0.23.4
-pandocfilters==1.4.2
-parso==0.3.1
-pexpect==4.6.0
-pickleshare==0.7.5
-Pillow==5.3.0
-prometheus-client==0.4.2
-prompt-toolkit==2.0.7
-protobuf==3.6.1
-ptyprocess==0.6.0
-pycurl==7.43.0
-Pygments==2.2.0
-pygobject==3.20.0
-pyparsing==2.3.0
-python-apt==1.1.0b1+ubuntu0.16.4.2
-python-dateutil==2.7.5
-pytz==2018.7
-pyzmq==17.1.2
-qtconsole==4.4.2
-scikit-learn==0.20.0
-scipy==1.1.0
-seaborn==0.9.0
-Send2Trash==1.5.0
-six==1.11.0
-sklearn==0.0
-tensorboard==1.12.0
-tensorflow-gpu==1.12.0
+gast==0.3.3
+google-auth==1.14.2
+google-auth-oauthlib==0.4.1
+google-pasta==0.2.0
+grpcio==1.28.1
+h5py==2.10.0
+idna==2.6
+joblib==0.15.1
+Keras-Preprocessing==1.1.0
+keyring==10.6.0
+keyrings.alt==3.0
+kiwisolver==1.2.0
+Markdown==3.2.1
+matplotlib==3.2.1
+numpy==1.18.4
+oauthlib==3.1.0
+opencv-python==4.2.0.34
+opt-einsum==3.2.1
+pandas==1.0.4
+protobuf==3.11.3
+pyasn1==0.4.8
+pyasn1-modules==0.2.8
+pycrypto==2.6.1
+pygobject==3.26.1
+pyparsing==2.4.7
+python-apt==1.6.5+ubuntu0.2
+python-dateutil==2.8.1
+pytz==2020.1
+pyxdg==0.25
+requests==2.23.0
+requests-oauthlib==1.3.0
+rsa==4.0
+scikit-learn==0.23.1
+scipy==1.4.1
+seaborn==0.10.1
+SecretStorage==2.3.1
+six==1.14.0
+tensorboard==2.2.1
+tensorboard-plugin-wit==1.6.0.post3
+tensorflow-estimator==2.2.0
+tensorflow-gpu==2.2.0
 termcolor==1.1.0
-terminado==0.8.1
-testpath==0.4.2
-tornado==5.1.1
-traitlets==4.3.2
-wcwidth==0.1.7
-webencodings==0.5.1
-Werkzeug==0.14.1
-widgetsnbextension==3.4.2
+threadpoolctl==2.1.0
+urllib3==1.25.9
+Werkzeug==1.0.1
+wrapt==1.12.1
 ```
 
-This image can run GPU-accelerated apps. Your host system needs to have **nvidia-docker2** installed and NVIDIA GPU driver version **>=384.81**.
+This image can run GPU-accelerated apps. Your host system needs to have **nvidia-docker2** installed and NVIDIA GPU driver version **>=418.39**.
 
 ## Running
 ```bash
-$ docker run -ti -p 8888:8888 -v "$(pwd)":/tmp/notebooks --rm --runtime=nvidia jtomori/ml_suite
+$ docker run -ti -p 8888:8888 -v "$(pwd)":/tmp/notebooks --rm --runtime=nvidia jtomori/ml_suite:tf-2.2.0
 ```
